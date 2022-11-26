@@ -3,7 +3,7 @@ Useful Business Calculations
 This assignment covers your basic proficiency with Python.
 '''
 
-def savings(grosspay, taxrate, expenses):
+def savings(gross_pay, tax_rate, expenses):
     '''Savings.
     2 points.
     This function calculates the money remaining
