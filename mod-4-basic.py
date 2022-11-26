@@ -189,7 +189,7 @@ def body_mass_index(weight, height):
     return body_mass_index
 
 def weight(weight_pounds):
-    weight = int(weight_pounds * 0.45359237)
+    weight = float(weight_pounds * 0.45359237)
     return weight
 
 def height(height_list):
@@ -197,7 +197,7 @@ def height(height_list):
     return height
 
 # enter weight in pounds
-weight_pounds = int(input("Weight, in pounds: "))
+weight_pounds = float(input("Weight, in pounds: "))
 
 # enter height 
 foot = int(input("Foot component of Height: "))
