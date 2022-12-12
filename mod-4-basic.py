@@ -30,17 +30,18 @@ def savings(gross_pay, tax_rate, expenses):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
 def savings(gross_pay, tax_rate, expenses):
-    savings = ((gross_pay - (gross_pay * tax_rate)) - expenses) * 100
+    savings = ((gross_pay - (gross_pay * tax_rate)) - expenses)
     return savings
     
 # ask employee for hourly rate
-hourlyrate = float(input("What was your hourly rate (in pesos)? "))
+hourlyrate = float(input("What was your hourly rate? "))
 
 # ask employee how many hours worked for the month
 hoursworked = float(input("How many hours did you work for this month? "))
 
 # compute for employee gross pay
 gross_pay = hourlyrate * hoursworked
+print(gross_pay)
 
 tax_rate = 0.22
 
@@ -132,30 +133,21 @@ def interest(principal, rate, periods):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
 def interest(principal, rate, periods):
-    interest = (principal*periods*(rate))
-    return interest
+  x = principal * rate
+  y = x * periods
+  final = principal + y
+  return final
 
-def finalvalue(interest, principal):
-   finalvalue = (interest(principal, rate, periods) + principal)
-   return finalvalue
+principal = int(input('Enter principal value (in pesos):'))
+print('₱', principal)
 
-# enter principal value
-principal = int(input("Principal Value: "))
-print(principal*100, "in centavos")
+rate = float(input('Enter interest rate in decimal: '))
 
-# enter the number of periods (in years)
-periods = int(input("Time (in years): "))
-print(periods, "years")
+periods = int(input('Enter number of periods invested (in months): '))
 
-# enter the interest rate per period in decimals
-rate = float(input("Interest rate (in decimals): "))
-print(rate) 
+final = interest(principal, rate, periods)
 
-# compute for interest
-print("The interest is", interest(principal, rate, periods))
-
-# compute for final value
-print("The final value of the investment is", int(finalvalue(interest, principal)), ".")
+print('The final value of your investment is ₱', round(final, 2), sep='')
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -184,27 +176,16 @@ def body_mass_index(weight, height):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-def body_mass_index(weight, height):
-    body_mass_index = (weight/(height * height))
-    return body_mass_index
+def body_mass_index(weight, feet, inches):
+    kg = weight / 2.2
+    x = feet * .3048
+    y = inches * 0.0254
+    height = x + y
+    BMI = kg / (height ** 2)
+    return BMI
 
-def weight(weight_pounds):
-    weight = float(weight_pounds * 0.45359237)
-    return weight
-
-def height(height_list):
-    height= ((height_list[0] * 12) + height_list[1]) * 0.0254 
-    return height
-
-# enter weight in pounds
-weight_pounds = float(input("Weight, in pounds: "))
-
-# enter height 
-foot = int(input("Foot component of Height: "))
-inches = int(input("Inches component of Height: "))
-height_foot = (foot,inches)
-height_list = list(height_foot)
-print(height_list)
-
-#compute BMI
-print("The body mass index is", body_mass_index(weight(weight_pounds), height(height_list)))
+weight = float(input('Enter weight in lbs: '))
+feet = int(input('Enter foot component of height: '))
+inches = int(input('Enter inches component of height: '))
+BMI = body_mass_index(weight, feet, inches)
+print('Your body mass index is',round(BMI,4))
